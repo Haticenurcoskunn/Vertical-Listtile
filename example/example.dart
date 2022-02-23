@@ -1,6 +1,5 @@
-// ignore_for_file: use_key_in_widget_constructors
-
 import 'package:flutter/material.dart';
+import 'package:vertical_listtile/vertical_listtile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,72 +11,27 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: VerticalListtile(
-        backgroundcolor: Colors.grey.shade300,
-        borderRadius: 20,
-        containerHeight: 350,
-        containerWidth: 200,
-        startWidget: myStartWidget(),
-        centerWidget: myCenterWidget(),
-        finishWidget: myFinishWidget(),
-      ),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const MyHomePage());
   }
 }
 
-class VerticalListtile extends StatefulWidget {
-  final Color backgroundcolor;
-  final double borderRadius;
-  final double containerWidth;
-  final double containerHeight;
-  final Widget startWidget;
-  final Widget centerWidget;
-  final Widget finishWidget;
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key}) : super(key: key);
 
-  const VerticalListtile({
-    required this.backgroundcolor,
-    required this.borderRadius,
-    required this.containerWidth,
-    required this.containerHeight,
-    required this.startWidget,
-    required this.centerWidget,
-    required this.finishWidget,
-  });
-
-  @override
-  State<VerticalListtile> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<VerticalListtile> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: Container(
-          width: widget.containerWidth,
-          height: widget.containerHeight,
-          decoration: BoxDecoration(
-            color: widget.backgroundcolor,
-            borderRadius: BorderRadius.all(
-              Radius.circular(widget.borderRadius),
-            ),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              widget.startWidget,
-              widget.centerWidget,
-              widget.finishWidget
-            ],
-          ),
-        ),
-      ),
+    return VerticalListtile(
+      backgroundcolor: Colors.grey.shade300,
+      borderRadius: 20,
+      containerHeight: 350,
+      containerWidth: 200,
+      startWidget: myStartWidget(),
+      centerWidget: myCenterWidget(),
+      finishWidget: myFinishWidget(),
     );
   }
 }
