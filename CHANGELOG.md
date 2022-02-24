@@ -1,3 +1,6 @@
+## 0.0.6
+
+* Edited README.md
 ## 0.0.5
 
 * Edited README.md
