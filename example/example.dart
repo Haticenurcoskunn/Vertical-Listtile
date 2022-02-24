@@ -24,14 +24,16 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return VerticalListtile(
-      backgroundcolor: Colors.grey.shade300,
-      borderRadius: 20,
-      containerHeight: 350,
-      containerWidth: 200,
-      startWidget: myStartWidget(),
-      centerWidget: myCenterWidget(),
-      finishWidget: myFinishWidget(),
+    return Scaffold(
+      body: VerticalListtile(
+        backgroundcolor: Colors.grey.shade300,
+        borderRadius: 20,
+        containerHeight: 350,
+        containerWidth: 200,
+        startWidget: myStartWidget(),
+        centerWidget: myCenterWidget(),
+        finishWidget: myFinishWidget(),
+      ),
     );
   }
 }
